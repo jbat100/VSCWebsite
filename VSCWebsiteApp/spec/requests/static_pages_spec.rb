@@ -26,7 +26,7 @@ describe "Static pages" do
     
     it "should have the content 'about us'" do
       visit '/static_pages/about'
-      page.should have_content('About us') 
+      page.should have_content('About Us') 
     end
 
     it "should have the h1 'About'" do
@@ -37,6 +37,22 @@ describe "Static pages" do
     it "should have the tile 'About'" do
       visit '/static_pages/about'
       page.should have_selector('title', :text => "Ruby on Rails Tutorial Sample App | About Us")
+    end
+
+
+  end 
+
+
+  describe "Contact page" do
+    
+    it "should have the content 'Contact'" do
+      visit '/static_pages/contact'
+      page.should have_content('Contact') 
+    end
+
+    it "should have the tile 'Contact'" do
+      visit '/static_pages/contact'
+      page.should have_selector('title', :text => "Ruby on Rails Tutorial Sample App | Contact")
     end
 
 
