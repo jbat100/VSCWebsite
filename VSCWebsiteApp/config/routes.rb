@@ -1,13 +1,10 @@
 VSCWebsiteApp::Application.routes.draw do
 
-  get "users/new"
-
   root to: 'static_pages#home'
   
   get "static_pages/home"
   
   match '/signup', to: 'users#new'
-
   match '/home',    to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
@@ -15,7 +12,6 @@ VSCWebsiteApp::Application.routes.draw do
 
   resources :microposts
   resources :users
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
