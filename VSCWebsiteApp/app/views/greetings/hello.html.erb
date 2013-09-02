@@ -1,2 +1,10 @@
-<h1>Greetings#hello</h1>
 <p>Find me in app/views/greetings/hello.html.erb</p>
+<p>And brush your teeth because it's <%= @time %></p>
+<p>And if you're not happy then <%= link_to "go somewhere else", greetings_goodbye_path %>!</p>
+<p>In any case you should leave in an hour at the most, as in, before <%= 1.hour.from_now %></p>
+<p>
+	Oh and by the way the files in the current directory are:
+	<% for f in @files %>
+		- filename: <%= f %>
+	<% end %>
+</p>
