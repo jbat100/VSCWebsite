@@ -1,0 +1,5 @@
+----------
+
+GENERATORS EXAMPLES
+
+rails generate controller Greetings hello goodbye

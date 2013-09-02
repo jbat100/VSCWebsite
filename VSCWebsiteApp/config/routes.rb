@@ -1,5 +1,9 @@
 VSCWebsiteApp::Application.routes.draw do
 
+  get "greetings/hello"
+
+  get "greetings/goodbye"
+
   root to: 'static_pages#home'
   
   get "static_pages/home"
