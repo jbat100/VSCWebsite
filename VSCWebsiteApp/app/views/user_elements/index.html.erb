@@ -1,29 +1,38 @@
-<h1>Listing user_elements</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image url</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @user_elements.each do |user_element| %>
-  <tr>
-    <td><%= user_element.title %></td>
-    <td><%= user_element.description %></td>
-    <td><%= user_element.image_url %></td>
-    <td><%= user_element.price %></td>
-    <td><%= link_to 'Show', user_element %></td>
-    <td><%= link_to 'Edit', edit_user_element_path(user_element) %></td>
-    <td><%= link_to 'Destroy', user_element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  	
+  	<% unless user_element.image_url.blank? %>
+  		<td><%= image_tag(user_element.image_url, :class => 'list_image', :height => '100', :width => '100') %></td>
+  	<% else %>
+	  	<td><%= image_tag("http://media.moddb.com/images/downloads/1/46/45425/Sound_WaveXXL.jpg", 
+	  	:class => 'list_image', :height => '100', :width => '100') %></td>
+  	<% end %>
+  	
+  	<td class="list_description">
+  		<dl>
+	    	<dt><%= user_element.title %></dt>
+	    	<dt><%= user_element.price %></dt>
+	    	<dd><%= truncate(strip_tags(user_element.description), :length => 80) %></dd>
+	    </dl>
+	</td>
+    
+    <td class="list_actions">
+	    <%= link_to 'Show', user_element %><br/>
+	    <%= link_to 'Edit', edit_user_element_path(user_element) %><br/>
+	    <%= link_to 'Destroy', user_element, method: :delete, data: { confirm: 'Are you sure?' } %>
+  	</td>
   </tr>
 <% end %>
+
 </table>
 
 <br />
 
-<%= link_to 'New User element', new_user_element_path %>
+<form style="display: inline" action=<%= new_user_element_path %> method="get">
+	<button class="btn btn-primary btn-large">New User Element</button>
+</form>
+
+

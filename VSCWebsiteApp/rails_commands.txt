@@ -6,6 +6,8 @@ rails generate controller Greetings hello goodbye
 
 rails generate scaffold user_element title:string description:text image_url:string price:decimal 
 
+rails generate migration AddPartNumberToProducts // http://guides.rubyonrails.org/migrations.html
+
 ----------
 
 RAKE TASKS
