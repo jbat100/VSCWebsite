@@ -5,3 +5,9 @@ GENERATORS EXAMPLES
 rails generate controller Greetings hello goodbye
 
 rails generate scaffold user_element title:string description:text image_url:string price:decimal 
+
+----------
+
+RAKE TASKS
+
+rake db:migrate // to update the database whenever migrations have been created

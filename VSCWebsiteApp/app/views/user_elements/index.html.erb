@@ -1,0 +1,29 @@
+<h1>Listing user_elements</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_elements.each do |user_element| %>
+  <tr>
+    <td><%= user_element.title %></td>
+    <td><%= user_element.description %></td>
+    <td><%= user_element.image_url %></td>
+    <td><%= user_element.price %></td>
+    <td><%= link_to 'Show', user_element %></td>
+    <td><%= link_to 'Edit', edit_user_element_path(user_element) %></td>
+    <td><%= link_to 'Destroy', user_element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User element', new_user_element_path %>

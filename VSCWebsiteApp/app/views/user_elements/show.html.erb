@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @user_element.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @user_element.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @user_element.image_url %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @user_element.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_element_path(@user_element) %> |
+<%= link_to 'Back', user_elements_path %>
